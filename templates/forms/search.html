@@ -1,0 +1,16 @@
+{% extends 'layouts/form.html' %}
+{% block title %}Search{% endblock %}
+{% block content %}
+  <form method="post" class="form", action = "{{url_for('output_results')}}">
+    <h3 class="form-heading">Search <a href="{{ url_for('home') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+    {{ form.name(class_ = 'form-control first-input', placeholder = form.name.label.text, required = true, autofocus = true) }}
+    {{ form.hours(class_ = 'form-control second-input', placeholder = form.hours.label.text, required = true) }}
+    <!--{{form.track, form.track.label.text}}-->
+    {{ form.track(class_ = 'form-control last-input', placeholder = form.track.label.text, required = true, autofocus = true) }}
+    <!--<p class="pull-left"><a href="{{ url_for('forgot') }}">Forgot Password?</a></p>-->
+    <!--<p class="pull-right"><a href="{{ url_for('register') }}">Register</a></p>-->
+
+    <input type="submit" value="Plan A Trip" class="btn btn-primary btn-lg btn-block">
+
+  </form>
+{% endblock %}
