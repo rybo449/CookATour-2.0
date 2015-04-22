@@ -144,7 +144,7 @@ def run_CookATour(input1, input2, input3):
 	file_location = os.getcwd()
 	f = open(file_location+'/templates/pages/results.html','w')
 	f.write("{%  extends 'layouts/main.html' %}\n")
-	f.write("{%  block title %}About{%  endblock %}\n")
+	f.write("{%  block title %}Search Results{%  endblock %}\n")
 	f.write("{%  block content %}\n")
 	now = dt.now()
 	time_left = int(input2)
