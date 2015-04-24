@@ -66,7 +66,8 @@ def output_results():
     input1 = request.form['name']
     input2 = request.form['hours']
     input3 = request.form['track']
-    run_CookATour(input1,input2,input3)
+    input4 = request.form['transport']
+    run_CookATour(input1,input2,input3, input4)
     return render_template('pages/results.html')
 
 

@@ -6,7 +6,9 @@
     {{ form.name(class_ = 'form-control first-input', placeholder = form.name.label.text, required = true, autofocus = true) }}
     {{ form.hours(class_ = 'form-control second-input', placeholder = form.hours.label.text, required = true) }}
     <!--{{form.track, form.track.label.text}}-->
-    {{ form.track(class_ = 'form-control last-input', placeholder = form.track.label.text, required = true, autofocus = true) }}
+    {{ form.track(class_ = 'form-control second-input', placeholder = form.track.label.text, required = true, autofocus = true) }}
+    {{ form.transport(class_ = 'form-control last-input', placeholder = form.transport.label.text, required = true, autofocus = true) }}
+
     <!--<p class="pull-left"><a href="{{ url_for('forgot') }}">Forgot Password?</a></p>-->
     <!--<p class="pull-right"><a href="{{ url_for('register') }}">Register</a></p>-->
 
