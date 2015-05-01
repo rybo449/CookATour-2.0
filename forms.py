@@ -26,7 +26,7 @@ class LoginForm(Form):
     name = TextField('Select Start Location', [DataRequired()])
     hours = TextField('How many hours do you have', [DataRequired()])
     #track = SelectField('Select Track', choices = [(0,'Buildings and Structures'), (1,'Gardens'), (2,'Historic and Protected Sites'), (3,'Monuments and Memorials'), (4,'Natural'), (5,'Parks'), (6,'Pub Crawl'), (7,'Clubbing')])
-    track = SelectField('Select Track', choices = [(0,'Buildings and Structures'), (1,'Gardens'), (2,'Historic and Protected Sites'), (3,'Monuments and Memorials'), (4,'Natural'), (5,'Parks'), (6,'Pub Crawl'), (7,'Clubbing')])
+    track = SelectField('Select Track', choices = [(0,'Buildings and Structures'), (1,'Shopping'), (2,'Historic and Protected Sites'), (3,'Monuments and Memorials'), (4,'Parks'), (5,'Pub Crawl'), (6,'Clubbing')])
 
     transport = SelectField('Select Mode of Transport', choices = [('driving','driving'), ('walking','walking'), ('bicycling','bicycling'), ('transit','transit')])
 

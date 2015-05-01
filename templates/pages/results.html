@@ -1,28 +1,61 @@
 {%  extends 'layouts/main.html' %}
 {%  block title %}Search Results{%  endblock %}
 {%  block content %}
-<p>This is the Buildings and Structures track!</p>
-<p>Go from 300 Cadman Plaza W Brooklyn to 180 Montague Apartments starting at time 2015-04-22 15:44:43.178746</p>
-<p>Here are the Directions</p>
-<p>This leg of your journey will take 3 minutes</p>
-<p>Walk to 185 Montague Street, Brooklyn, NY 11201, USA</p>
-<p>This place is 180 Montague Apartments</p>
-<p>Here's the telephone number: (718) 643-2444</p>
-<p>Time for a Snack!</p>
-<p>Go from 180 Montague Apartments to The Brooklyner Apartments starting at time 2015-04-22 17:03:07.178746</p>
-<p>Here are the Directions</p>
-<p>This leg of your journey will take 2 minutes</p>
-<p>Subway towards Bay Ridge - 95 St</p>
-<p>This leg of your journey will take 0 minutes</p>
-<p>Walk to 107-111 Lawrence Street, Brooklyn, NY 11201, USA</p>
-<p>This place is The Brooklyner Apartments</p>
-<p>Here's the telephone number: (718) 246-0111</p>
-<p>Here are the Directions</p>
-<p>This leg of your journey will take 0 minutes</p>
-<p>Walk to Jay St - MetroTech</p>
-<p>This leg of your journey will take 2 minutes</p>
-<p>Subway towards Forest Hills - 71 Av</p>
-<p>This leg of your journey will take 3 minutes</p>
+<script type="text/javascript">
+function toggle(obj) {
+var obj=document.getElementById(obj);
+if (obj.style.display == "block") obj.style.display = "none";
+else obj.style.display = "block";
+}
+</script>
+<h1>This is the Monuments and Memorials track!</h1>
+<p><br><br><b>Go from 300 Cadman Plaza W Brooklyn to World Trade Center Site starting at time 07:41 PM</b></p>
+<a href="javascript: void(0);" onClick="toggle('places0')">Here are the Directions</a>
+<p><i>This leg of your journey will take 19 minutes</i></p>
+<div id="places0" style="display:none;"><p>Walk to Borough Hall</p>
+<p>You will have to take the 5 subway line</p>
+<p>Walk to 911 Greenwich Street, New York, NY 10006, USA</p>
+</div>
+<a href="javascript: void(0);" onClick="toggle('places1')">Click for Name and Phone Number</a>
+<div id="places1" style="display:none;"><p>This place is World Trade Center Site</p>
+<p>Here's the telephone number: (212) 312-8800</p>
+</div>
+<p><br><br><b>Go from World Trade Center Site to Irish Hunger Memorial starting at time 09:00 PM</b></p>
+<a href="javascript: void(0);" onClick="toggle('places3')">Here are the Directions</a>
+<p><i>This leg of your journey will take 8 minutes</i></p>
+<div id="places3" style="display:none;"><p>Walk to 6 River Terrace, New York, NY 10282, USA</p>
+</div>
+<a href="javascript: void(0);" onClick="toggle('places4')">Click for Name and Phone Number</a>
+<div id="places4" style="display:none;"><p>This place is Irish Hunger Memorial</p>
+<p>Here's the telephone number: Not Available</p>
+</div>
+<p><br><br><b>Go from Irish Hunger Memorial to National September 11 Memorial & Museum starting at time 10:09 PM</b></p>
+<a href="javascript: void(0);" onClick="toggle('places6')">Here are the Directions</a>
+<p><i>This leg of your journey will take 10 minutes</i></p>
+<div id="places6" style="display:none;"><p>Walk to Vesey St/North End Av</p>
+<p>You will have to take the M20 bus</p>
+<p>Walk to 911 Greenwich Street, New York, NY 10006, USA</p>
+</div>
+<a href="javascript: void(0);" onClick="toggle('places7')">Click for Name and Phone Number</a>
+<div id="places7" style="display:none;"><p>This place is National September 11 Memorial & Museum</p>
+<p>Here's the telephone number: (212) 312-8800</p>
+</div>
+<p><br><br><b>Time for a Snack!</b></p>
+<p><br><br><b>Go from National September 11 Memorial & Museum to Hoyip Chinese Restaurant starting at time 12:20 AM</b></p>
+<a href="javascript: void(0);" onClick="toggle('places9')">Here are the Directions</a>
+<p><i>This leg of your journey will take 7 minutes</i></p>
+<div id="places9" style="display:none;"><p>Walk to 101-125 Liberty Street, New York, NY 10006, USA</p>
+</div>
+<a href="javascript: void(0);" onClick="toggle('places10')">Click for Name and Phone Number</a>
+<p>This place is Hoyip Chinese Restaurant</p>
+<div id="places10" style="display:none;"><p>They serve Chinese</p>
+<p>Call them to make a reservation: (212) 349-8286</p>
+</div>
+<p><br><br><b>Time to head back!</b></p><a href="javascript: void(0);" onClick="toggle('places12')">Here are the Directions</a>
+<p><i>This leg of your journey will take 11 minutes</i></p>
+<div id="places12" style="display:none;"><p>Walk to Cortlandt St</p>
+<p>You will have to take the N subway line</p>
 <p>Walk to 300 Cadman Plaza West, Brooklyn, NY 11201, USA</p>
-<p>Have fun on your trip! Choose Wisely :)</p>
+</div>
+<p><b>Have fun on your trip! Choose Wisely :)</b></p>
 {%  endblock %}
