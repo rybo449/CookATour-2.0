@@ -17,3 +17,4 @@ factual-api==1.6.0
 python-dateutil==1.5
 waitress==0.8.9
 gunicorn==19.3.0
+pytz==2014.9

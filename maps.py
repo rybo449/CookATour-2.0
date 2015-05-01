@@ -8,6 +8,7 @@ from factual.utils import circle
 from dateutil import tz
 import random
 import os
+import pytz
 
 factual = Factual('gfdD2lYBQ21Cs5M9eRpdEZCgDDswPvDzfeFOqYko','qkWK3Bv2wK7Jpz4e5JCSlKQVANbev8FHsCkoTSxZ')
 gmaps = googlemaps.Client(key = 'AIzaSyDuSfwq0Nli3CzitI3SZob0t90dprS8JiQ')
@@ -110,7 +111,7 @@ def route(time, lat, lng, templat, templng, time_left,f, input2, hunger_count, i
 def decideplace(time, track, lat, lng, start, now,f, input2, places_been, hunger_count, input4, counter):
 	no_more = 0
 	if time<0:
-		return time, templat, templng, name, hunger_count, no_more
+		return time, templat, templng, name, hunger_count, no_more, counter
 
 
 	data = places.filters({'$and':[{'category_ids':{'$includes':track}}]}).geo(circle(lat,lng, 1000*time)).data()
@@ -121,7 +122,8 @@ def decideplace(time, track, lat, lng, start, now,f, input2, places_been, hunger
 		count_datapoints += 1
 	if count_datapoints == len(data):
 		no_more = 1
-		return time, templat, templng, name, hunger_count, no_more
+		templat,templng,name = lat,lng,start
+		return time, templat, templng, name, hunger_count, no_more, counter
 	if not data:
 		templat = lat
 		templng = lng
@@ -150,7 +152,9 @@ def decideplace(time, track, lat, lng, start, now,f, input2, places_been, hunger
 			templat = lat
 			templng = lng
 			name = start
-
+	if not templat:
+		templat,templng,no_more = lat,lng,1
+		return time, templat, templng, name, hunger_count, no_more, counter
 	return time, templat, templng, name, hunger_count, no_more, counter
 
 def decidefood(time, lat, lng, start, now,f, input2, places_been, hunger_count, input4, counter):
@@ -222,8 +226,9 @@ def run_CookATour(input1, input2, input3, input4):
 	f.write("</script>\n")
 
 
+	now = dt.now(pytz.timezone(str(gmaps.timezone((lat,lng))[u'timeZoneId'])))
 
-	now = dt.now(tz.tzlocal())
+	#now = dt.now(tz.tzlocal())
 	time_left = int(input2)
 	hunger_count = 0
 	input2 = datetime.timedelta(hours = int(input2))
@@ -244,7 +249,8 @@ def run_CookATour(input1, input2, input3, input4):
 		if hunger_count<4:
 			time_left, templat, templng, start, hunger_count, no_more, counter = decideplace(time_left, categories_places[int(input3)], templat, templng, start, now,f, input2, places_been, hunger_count, input4, counter)
 			if no_more:
-				f.write("<p><b> Seems like there is only so much you can do here :)</b></p>")
+				f.write("<p><b> Seems like there is only so much you can do here.</b></p>\n")
+				f.write("<p><b> Try to be a bit more specific with your location, or enter the zipcode(Always works for me) :)</b></p>\n")
 				break
 		else:
 			hunger_count = 0
