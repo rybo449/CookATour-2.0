@@ -75,7 +75,7 @@ def route(time, lat, lng, templat, templng, time_left,f, input2, hunger_count, i
 	try:
 		time_taken = int(directions_result[0][u'legs'][0][u'duration'][u'value'])
 	except:
-		f.write(directions_result)
+		return time_left, hunger_count, counter
 
 	f.write("<p><i>This leg of your journey will take "+str(int(time_taken/float(60)))+" minutes</i></p>\n")		
 	for i in directions_result[0][u'legs'][0][u'steps']: 
