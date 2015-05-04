@@ -30,6 +30,8 @@ class LoginForm(Form):
 
     transport = SelectField('Select Mode of Transport', choices = [('driving','driving'), ('walking','walking'), ('bicycling','bicycling'), ('transit','transit')])
 
+class ClusterForm(Form):
+    name = TextField('Select Start Location', [DataRequired()])
 
 class ForgotForm(Form):
     email = TextField(

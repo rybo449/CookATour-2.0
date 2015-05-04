@@ -224,7 +224,10 @@ def run_CookATour(input1, input2, input3, input4):
 	f.write("else obj.style.display = \"block\";\n")
 	f.write("}\n")
 	f.write("</script>\n")
-
+	if int(input2)>12:
+		f.write("<p><b>Enter less than 12 hours for your day trip! Try again :)</p></b>\n")
+		f.write("{%  endblock %}\n")
+		return 
 
 	now = dt.now(pytz.timezone(str(gmaps.timezone((lat,lng))[u'timeZoneId'])))
 

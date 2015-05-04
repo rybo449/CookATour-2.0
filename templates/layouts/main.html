@@ -56,7 +56,8 @@
             <li {% if request.endpoint == 'about' %} class="active" {% endif %}><a href="{{ url_for('about') }}">About</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li><a href="{{ url_for('search') }}">Search</a></li>
+            <li><a href="{{ url_for('cluster') }}">Find a Pub Crawl Near You</a></li>
+            <li><a href="{{ url_for('search') }}">Plan a Trip</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

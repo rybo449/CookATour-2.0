@@ -8,6 +8,7 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 from maps import *
+from bar import *
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -60,6 +61,18 @@ def search():
 def register():
     form = RegisterForm(request.form)
     return render_template('forms/register.html', form=form)
+
+@app.route('/cluster')
+def cluster():
+    form = ClusterForm(request.form)
+    return render_template('forms/search_cluster.html', form = form)
+
+
+@app.route('/cluster/results', methods = ['POST'])
+def output_clusters():
+    input1 = request.form['name']
+    run_BarCluster(input1)
+    return render_template('pages/results_cluster.html')
 
 @app.route('/search/results', methods = ['POST'])
 def output_results():
