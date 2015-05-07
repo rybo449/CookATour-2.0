@@ -21,4 +21,4 @@ waitress==0.8.9
 gunicorn==19.3.0
 pytz==2014.9
 scikit-learn==0.15.2
-pandas==0.14.1
+python-google-places==0.12.1

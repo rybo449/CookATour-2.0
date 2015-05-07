@@ -74,6 +74,25 @@ def output_clusters():
     run_BarCluster(input1)
     return render_template('pages/results_cluster.html')
 
+@app.route('/recurse',methods = ['GET','POST'])
+def recurse():
+    try:
+        for i in xrange(1,5):
+            inp = request.form.getlist(str(i))
+
+            if inp == []:
+                continue
+            inp = str(inp[0][1:-1])
+            inp = inp.replace('\'', '')
+            inp = inp.split(',')
+            #input1,input2,input3,input4 = inp
+            #inp = inp[]
+            break 
+        run_recurse(inp)
+    except:
+        return render_template('pages/results_cluster.html')        
+    return render_template('pages/results_cluster.html')
+
 @app.route('/search/results', methods = ['POST'])
 def output_results():
     input1 = request.form['name']
@@ -118,6 +137,7 @@ if not app.debug:
 
 # Default port:
 if __name__ == '__main__':
+    global feature_vector
     app.run()
 
 # Or specify port manually:
